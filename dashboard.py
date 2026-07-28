@@ -58,7 +58,7 @@ col3.metric("Season with Lowest Average Bike Rental",
              lowest_season
 )
 
-col4.metric("Season with Highest Average Bike Rental",
+col4.metric("Month with Highest Average Bike Rental",
              highest_month)
 
 st.header("Bike Rental Data Preview")
