@@ -66,8 +66,7 @@ st.dataframe(df)
 st.write(f"Total Observations: **{len(df):,}**")
 
 # Pertanyaan 1
-st.header("Pertanyaan 1 : Kombinasi cuaca dan musim manakah yang menghasilkan nilai
-rata-rata permintaan sewa sepeda paling rendah di tahun 2011-2012?")
+st.header("Pertanyaan 1 : Kombinasi cuaca dan musim manakah yang menghasilkan nilai rata-rata permintaan sewa sepeda paling rendah di tahun 2011-2012?")
 
 df_pivot_1 = (df.groupby(["season", "weather"]).agg(
     average_daily_rental=("total_rental", "mean")
@@ -96,12 +95,10 @@ ax.legend(
 
 
 st.pyplot(fig)
-st.caption("Rata-rata permintaan sewa sepeda saat cuaca Light Rain/Light Snow di musim Spring paling rendah di antara kombinasi cuaca dan musim lainnya.
-Sementara itu, cuaca Clear/Partly Cloud di bulan Autumn merupakan kondisi paling ideal untuk menyewa sepeda")
+st.caption("Rata-rata permintaan sewa sepeda saat cuaca Light Rain/Light Snow di musim Spring paling rendah di antara kombinasi cuaca dan musim lainnya. Sementara itu, cuaca Clear/Partly Cloud di bulan Autumn merupakan kondisi paling ideal untuk menyewa sepeda")
 
 # Pertanyaan 2
-st.header("Pertanyaan 2 : Bagaimana perbedaan nilai rata-rata permintaan sewa sepeda antara Working Days dan Non-Working Days per bulan pada tahun 2012, dan bulan
-manakah yang perlu diutamakan dalam mengantur inventori sepeda?")
+st.header("Pertanyaan 2 : Bagaimana perbedaan nilai rata-rata permintaan sewa sepeda antara Working Days dan Non-Working Days per bulan pada tahun 2012, dan bulan manakah yang perlu diutamakan dalam mengantur inventori sepeda?")
 
 df_2012 = df[df["year"]==2012]
 
