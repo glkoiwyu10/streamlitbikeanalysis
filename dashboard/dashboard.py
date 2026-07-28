@@ -15,7 +15,10 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # Import data
-df = pd.read_csv("main_data.csv")
+from pathlib import Path
+base_dir = Path(__file__).resolve().parent
+data_file = base_dir/"main_data.csv"
+df = pd.read_csv(data_file)
 
 # Create Dashboard
 st.set_page_config(
