@@ -15,4 +15,4 @@ bike rental between working days and non-working days for each month in 2012.
 `cd dashboard`
 ### 4. Open streamlit
 `streamlit run dashboard.py`
-### Streamlit link : https://appbikeanalysis-ne86pkrjaqbhlzen29htke.streamlit.app/
+### Streamlit link : https://dashboardpy-5bwmzowysbhncdc46xjwnp.streamlit.app/
