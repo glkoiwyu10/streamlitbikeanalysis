@@ -1,4 +1,4 @@
-# **Proyek Bike Rental Analysis**
+# **Project Bike Rental Analysis**
 
 Dataset : https://www.kaggle.com/datasets/lakshmi25npathi/bike-sharing-dataset
 
