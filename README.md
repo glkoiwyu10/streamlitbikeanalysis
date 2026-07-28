@@ -12,5 +12,5 @@ bike rental between working days and non-working days for each month in 2012.
 ### 2. Install library
 `pip install -r requriements.txt`
 ### 3. Run streamlit
-`cd dashboard
-streamlit run dashboard.py`
+`cd dashboard`
+`streamlit run dashboard.py`
