@@ -95,7 +95,7 @@ st.write(f"Total Observations: **{len(df):,}**")
 
 # Pertanyaan 1
 st.header("Pengaruh Kombinasi Cuaca dan Musim Terhadap Nilai Rata-rata Permintaan Sewa Sepeda")
-st.caption(f"Clustered Bar Chart tahun : **{selected_years}**")
+st.caption(f"Clustered Bar Chart tahun : **{selected_year}**")
 
 df_pivot_1 = (df_copy.groupby(["season", "weather"]).agg(
     average_daily_rental=("total_rental", "mean")
