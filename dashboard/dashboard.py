@@ -53,6 +53,7 @@ df_copy = df[(df["year"].isin(year_options)) &
 (df["weather"].isin(weather_options))
 ]
 
+selected_year = ", ".join(map(str, year_options))
 # Create title
 st.title("Bike Sharing Data Analysis Dashboard")
 
@@ -94,6 +95,7 @@ st.write(f"Total Observations: **{len(df):,}**")
 
 # Pertanyaan 1
 st.header("Pengaruh Kombinasi Cuaca dan Musim Terhadap Nilai Rata-rata Permintaan Sewa Sepeda")
+st.caption(f"Clustered Bar Chart tahun : **{selected_years}**")
 
 df_pivot_1 = (df_copy.groupby(["season", "weather"]).agg(
     average_daily_rental=("total_rental", "mean")
