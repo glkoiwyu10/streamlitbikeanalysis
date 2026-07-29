@@ -15,10 +15,6 @@ bike rental between working days and non-working days for each month in 2012.
 `pip install -r requirements.txt`
 
 ### 2. Setup Environment - Shell/Terminal
-`mkdir bike-rental-analysis-dashboard`
-
-`cd bike-rental-analysis-dashboard`
-
 `python -m venv venv`
 #### Windows
 `venv\scripts/activate`
