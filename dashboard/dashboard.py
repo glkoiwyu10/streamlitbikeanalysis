@@ -139,10 +139,9 @@ st.caption("Rata-rata permintaan sewa sepeda antara tahun 2011-2012 saat cuaca L
 # Pertanyaan 2
 st.header("Pengaruh Working Day dan Non-Working Day terhadap Rata-rata Permintaan Sewa Sepeda")
 st.caption("Line chart ini akan menampilkan untuk pilihan tahun 2011, 2012, atau pilihan kedua tahun")
-st.caption(f"Menampilkan data untuk jenis hari : **{selected_day}**; 
-pada tahun **{selected_year}**;  
-cuaca : **{selected_weather}**;  
-dan musim **{selected_season}**")
+st.caption(f"Menampilkan data untuk jenis hari : **{selected_day}** tahun **{selected_year}**")
+st.caption(f"Grafik menampilkan data untuk musim : **{selected_season}**")
+st.caption(f"Kondisi cuaca yang dipilih pada grafik ini : **{selected_weather}**")  
 
 #df_2012 = df_copy[df_copy["year"]==2012]
 
