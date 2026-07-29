@@ -20,6 +20,7 @@ base_dir = Path(__file__).resolve().parent
 data_file = base_dir/"main_data.csv"
 df = pd.read_csv(data_file)
 
+
 # Create Dashboard
 st.set_page_config(
     page_title="Proyek Akhir Bike Analysis",
@@ -28,6 +29,29 @@ st.set_page_config(
 )
 
 sns.set_style("whitegrid")
+
+# Create Filter
+st.sidebar.header("Filter By")
+
+year_options = st.sidebar.multiselect("Select Year",
+                                      options=sorted(df["year"].unique()),
+                                      default=sorted(df["year"].unique())
+                                     )
+
+season_options = st.sidebar.multiselect("Select Season",
+                                       options=sorted(df["season"].unique()),
+                                       default=sorted(df["season"].unique())
+                                      )
+
+weather_options = st.sidebar.multiselect("Select Weather",
+                                         options=sorted(df["weather"].unique()),
+                                         default=sorted(df["weather"].unique())
+                                        )
+
+df_copy = df[(df["year"].isin(year_options)) &
+(df["season"].isin(season_options)) &
+(df["weather"].isin(weather_options))
+]
 
 # Create title
 st.title("Bike Sharing Data Analysis Dashboard")
@@ -71,7 +95,7 @@ st.write(f"Total Observations: **{len(df):,}**")
 # Pertanyaan 1
 st.header("Pertanyaan 1 : Kombinasi cuaca dan musim manakah yang menghasilkan nilai rata-rata permintaan sewa sepeda paling rendah di tahun 2011-2012?")
 
-df_pivot_1 = (df.groupby(["season", "weather"]).agg(
+df_pivot_1 = (df_copy.groupby(["season", "weather"]).agg(
     average_daily_rental=("total_rental", "mean")
 ).reset_index().round(3)
 )
@@ -103,7 +127,7 @@ st.caption("Rata-rata permintaan sewa sepeda saat cuaca Light Rain/Light Snow di
 # Pertanyaan 2
 st.header("Pertanyaan 2 : Bagaimana perbedaan nilai rata-rata permintaan sewa sepeda antara Working Days dan Non-Working Days per bulan pada tahun 2012, dan bulan manakah yang perlu diutamakan dalam mengantur inventori sepeda?")
 
-df_2012 = df[df["year"]==2012]
+df_2012 = df_copy[df_copy["year"]==2012]
 
 # Create pivot table
 df_pivot_2 = (df_2012.groupby(["month", "workingday_type"])
