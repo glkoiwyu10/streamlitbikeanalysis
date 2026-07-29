@@ -127,7 +127,7 @@ st.caption("Rata-rata permintaan sewa sepeda saat cuaca Light Rain/Light Snow di
 # Pertanyaan 2
 st.header("Pertanyaan 2 : Bagaimana perbedaan nilai rata-rata permintaan sewa sepeda antara Working Days dan Non-Working Days per bulan pada tahun 2012, dan bulan manakah yang perlu diutamakan dalam mengantur inventori sepeda?")
 
-df_2012 = df_copy[df_copy["year"]==2012]
+df_2012 = df[df["year"]==2012]
 
 # Create pivot table
 df_pivot_2 = (df_2012.groupby(["month", "workingday_type"])
