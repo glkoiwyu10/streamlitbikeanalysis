@@ -138,11 +138,13 @@ st.caption("Rata-rata permintaan sewa sepeda antara tahun 2011-2012 saat cuaca L
 
 # Pertanyaan 2
 st.header("Pengaruh Working Day dan Non-Working Day terhadap Rata-rata Permintaan Sewa Sepeda")
-st.caption("Line chart ini hanya akan menampilkan untuk pilihan tahun 2012, atau pilihan kedua tahun")
+st.caption("Line chart ini akan menampilkan untuk pilihan tahun 2011, 2012, atau pilihan kedua tahun")
 st.caption(f"Menampilkan data untuk jenis hari : **{selected_day}**")
 
 #df_2012 = df_copy[df_copy["year"]==2012]
+
 df_2012 = df_copy
+
 # Create pivot table
 df_pivot_2 = (df_2012.groupby(["month", "workingday_type"])
 .agg(average_daily_rental=("total_rental", "mean"))
@@ -168,7 +170,7 @@ sns.lineplot(
     ax=ax
 )
 
-ax.set_title("Trends of Average Daily Bike Rental for Working Day and Non-Working Day in 2012")
+ax.set_title("Trends of Average Daily Bike Rental for Working Day and Non-Working Day")
 plt.xlabel("Month")
 plt.ylabel("Average Daily Bike Rental")
 
