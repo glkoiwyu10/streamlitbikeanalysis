@@ -93,7 +93,7 @@ st.dataframe(df)
 st.write(f"Total Observations: **{len(df):,}**")
 
 # Pertanyaan 1
-st.header("Pertanyaan 1 : Kombinasi cuaca dan musim manakah yang menghasilkan nilai rata-rata permintaan sewa sepeda paling rendah di tahun 2011-2012?")
+st.header("Pengaruh Kombinasi Cuaca dan Musim Terhadap Nilai Rata-rata Permintaan Sewa Sepeda")
 
 df_pivot_1 = (df_copy.groupby(["season", "weather"]).agg(
     average_daily_rental=("total_rental", "mean")
