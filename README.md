@@ -7,12 +7,23 @@ on the average daily bike rental between 2011-2012. It also explores the trend d
 bike rental between working days and non-working days for each month in 2012.
 
 ## Run this project
-### 1. Clone repository
-`git clone https://github.com/glkoiwyu10/streamlitbikeanalysis`
-### 2. Install library
-`pip install -r requriements.txt`
-### 3. Locate dashboard
+### 1. Setup Environment
+`conda create --name bike-rental-analysis-dashboard python=3.11`
+`conda activate bike-rental-analysis-dashboard`
+`pip install -r requirements.txt`
+
+### 2. Setup Environment - Shell/Terminal
+`mkdir bike-rental-analysis-dashboard`
+`cd bike-rental-analysis-dashboard`
+`python -m venv venv`
+#### Windows
+`venv\scripts/activate`
+
+`pip install -r requirements.txt`
+
+### 3. Run Streamlit App
 `cd dashboard`
-### 4. Open streamlit
 `streamlit run dashboard.py`
-### Streamlit link : https://dashboardpy-5bwmzowysbhncdc46xjwnp.streamlit.app/
+
+### Streamlit Dashboard Link 
+https://dashboardpy-5bwmzowysbhncdc46xjwnp.streamlit.app/
