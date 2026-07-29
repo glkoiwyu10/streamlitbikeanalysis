@@ -48,21 +48,21 @@ weather_options = st.sidebar.multiselect("Select Weather",
                                          default=sorted(df["weather"].unique())
                                         )
 
-month_options = st.sidebar.multiselect("Select Month",
-                                       options=sorted(df["month"].unique()),
-                                       default=sorted(df["month"].unique())
+day_options = st.sidebar.multiselect("Select Month",
+                                       options=sorted(df["workingday_type"].unique()),
+                                       default=sorted(df["workingday_type"].unique())
                                       )
 
 df_copy = df[(df["year"].isin(year_options)) &
 (df["season"].isin(season_options)) &
 (df["weather"].isin(weather_options)) &
-(df["month"].isin(month_options))
+(df["workingday_type"].isin(day_options))
 ]
 
 selected_year = ", ".join(map(str, year_options))
 selected_season = ", ".join(map(str, season_options))
 selected_weather = ", ".join(map(str, weather_options))
-selected_month = ", ".join(map(str, month_options))
+selected_day = ", ".join(map(str, day_options))
 
 # Create title
 st.title("Bike Sharing Data Analysis Dashboard")
@@ -139,7 +139,7 @@ st.caption("Rata-rata permintaan sewa sepeda antara tahun 2011-2012 saat cuaca L
 # Pertanyaan 2
 st.header("Pengaruh Working Day dan Non-Working Day terhadap Rata-rata Permintaan Sewa Sepeda")
 st.caption("Line chart ini hanya akan menampilkan untuk pilihan tahun 2012, atau pilihan kedua tahun")
-st.caption(f"Menampilkan data untuk bulan : **{selected_month}**")
+st.caption(f"Menampilkan data untuk jenis hari : **{selected_day}**")
 
 df_2012 = df[df["year"]==2012]
 
