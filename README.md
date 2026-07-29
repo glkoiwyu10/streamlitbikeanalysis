@@ -9,7 +9,9 @@ bike rental between working days and non-working days for each month in 2012.
 ## Run this project
 ### 1. Setup Environment
 `conda create --name bike-rental-analysis-dashboard python=3.11`
+
 `conda activate bike-rental-analysis-dashboard`
+
 `pip install -r requirements.txt`
 
 ### 2. Setup Environment - Shell/Terminal
