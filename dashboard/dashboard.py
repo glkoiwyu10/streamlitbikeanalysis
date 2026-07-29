@@ -141,8 +141,8 @@ st.header("Pengaruh Working Day dan Non-Working Day terhadap Rata-rata Permintaa
 st.caption("Line chart ini hanya akan menampilkan untuk pilihan tahun 2012, atau pilihan kedua tahun")
 st.caption(f"Menampilkan data untuk jenis hari : **{selected_day}**")
 
-df_2012 = df[df["year"]==2012]
-
+#df_2012 = df_copy[df_copy["year"]==2012]
+df_2012 = df_copy
 # Create pivot table
 df_pivot_2 = (df_2012.groupby(["month", "workingday_type"])
 .agg(average_daily_rental=("total_rental", "mean"))
