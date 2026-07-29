@@ -48,14 +48,21 @@ weather_options = st.sidebar.multiselect("Select Weather",
                                          default=sorted(df["weather"].unique())
                                         )
 
+month_options = st.sidebar.multiselect("Select Month",
+                                       options=sorted(df["month"].unique()),
+                                       default=sorted(df["month"].unique())
+                                      )
+
 df_copy = df[(df["year"].isin(year_options)) &
 (df["season"].isin(season_options)) &
-(df["weather"].isin(weather_options))
+(df["weather"].isin(weather_options)) &
+(df["month"].isin(month_options))
 ]
 
 selected_year = ", ".join(map(str, year_options))
 selected_season = ", ".join(map(str, season_options))
 selected_weather = ", ".join(map(str, weather_options))
+selected_month = ", ".join(map(str, month_options))
 
 # Create title
 st.title("Bike Sharing Data Analysis Dashboard")
@@ -127,10 +134,12 @@ ax.legend(
 
 
 st.pyplot(fig)
-st.caption("Rata-rata permintaan sewa sepeda saat cuaca Light Rain/Light Snow di musim Spring paling rendah di antara kombinasi cuaca dan musim lainnya. Sementara itu, cuaca Clear/Partly Cloud di bulan Autumn merupakan kondisi paling ideal untuk menyewa sepeda")
+st.caption("Rata-rata permintaan sewa sepeda antara tahun 2011-2012 saat cuaca Light Rain/Light Snow di musim Spring paling rendah di antara kombinasi cuaca dan musim lainnya. Sementara itu, cuaca Clear/Partly Cloud di bulan Autumn merupakan kondisi paling ideal untuk menyewa sepeda")
 
 # Pertanyaan 2
-st.header("Pertanyaan 2 : Bagaimana perbedaan nilai rata-rata permintaan sewa sepeda antara Working Days dan Non-Working Days per bulan pada tahun 2012, dan bulan manakah yang perlu diutamakan dalam mengantur inventori sepeda?")
+st.header("Pengaruh Working Day dan Non-Working Day terhadap Rata-rata Permintaan Sewa Sepeda")
+st.caption("Line chart ini hanya akan menampilkan untuk pilihan tahun 2012, atau pilihan kedua tahun")
+st.caption(f"Menampilkan data untuk bulan : {selected_month}**)
 
 df_2012 = df[df["year"]==2012]
 
